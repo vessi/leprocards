@@ -10,11 +10,6 @@
  *
  *= require_self
  *= require twitter/bootstrap
+ *= require _style
  *= require_tree .
 */
-a.brand i.icon-envelope.icon-white {
-    margin-top: 4px;
-}
-section.content .container {
-    padding-top: 50px;
-}
