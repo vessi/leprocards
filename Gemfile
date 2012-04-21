@@ -31,6 +31,8 @@ end
 
 group :test do
   gem 'capybara'
+  gem 'launchy'
+  gem 'simplecov'
 end
 
 # To use Jbuilder templates for JSON

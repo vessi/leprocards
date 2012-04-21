@@ -6,7 +6,10 @@
 
 # Ignore bundler config
 /.bundle
+# Ignore IDE files
 /.idea
+# Ignore coverage results
+/coverage
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
