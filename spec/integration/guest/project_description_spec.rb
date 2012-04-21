@@ -4,7 +4,7 @@ require 'acceptance_helper'
 
 feature "Project description" do
 
-  scenario "Visitor should can see project short description", js: true do
+  scenario "Visitor should can see project short description" do
     visit '/'
     page.should have_selector('#project-description')
     find('#project-description').should have_content 'Лепрооткрытки'
