@@ -1,6 +1,19 @@
 Leprocards::Application.routes.draw do
+  get 'send', to: 'postcards#send_card'
+  get 'receive', to: 'postcards#receive_card'
+  get 'sent', to: 'postcards#sent_cards'
+  get 'received', to: 'postcards#received_cards'
+
+  get 'about', to: 'site#about', as: 'about'
+
+  get 'signup', to: 'users#new', as: 'signup'
+  get 'login', to: 'sessions#new', as: 'login'
+  get 'logout', to: 'sessions#destroy', as: 'logout'
+
+  resources :users
+  resources :sessions
+
   root to: 'site#index'
-  get "site/index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

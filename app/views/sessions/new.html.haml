@@ -1,0 +1,14 @@
+- content_for :navbar do
+  = render partial: "shared/nav_bar"
+- content_for :sidebar do
+  = render partial: "shared/side_bar"
+%h1 Log in
+= form_tag sessions_path do
+  .field
+    = label_tag :name
+    = text_field_tag :name, params[:name]
+  .field
+    = label_tag :password
+    = password_field_tag :password
+  .actions
+    = submit_tag 'Log in'

@@ -9,5 +9,12 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require twitter/bootstrap
  *= require_tree .
 */
+a.brand i.icon-envelope.icon-white {
+    margin-top: 4px;
+}
+section.content .container {
+    padding-top: 50px;
+}

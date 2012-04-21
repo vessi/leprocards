@@ -1,0 +1,25 @@
+- content_for :navbar do
+  = render partial: "shared/nav_bar"
+- content_for :sidebar do
+  = render partial: "shared/side_bar"
+%h1 Регистрация
+= form_for @user do |f|
+  - if @user.errors.any?
+    - @user.errors.full_messages.each do |message|
+      .alert.alert-error
+        %a.close{data:{dismiss: 'alert'}} [x]
+        = message
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :email
+    = f.email_field :email
+  .field
+    = f.label :password
+    = f.password_field :password
+  .field
+    = f.label :password_confirmation
+    = f.password_field :password_confirmation
+  .actions
+    = f.submit

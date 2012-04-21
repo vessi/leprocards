@@ -1,0 +1,26 @@
+- content_for :navbar do
+  = render partial: 'shared/nav_bar'
+- content_for :sidebar do
+  = render partial: 'shared/side_bar'
+.well
+  %table.table.table-striped
+    %thead
+      %tr
+        %th Отправитель
+        %th Получатель
+        %th Отправлено
+        %th Получено
+        %th Статус
+    %tbody
+      - @postcards.each do |postcard|
+        %tr
+          %th
+            = postcard.sender.name
+          %th
+            = postcard.receiver.name
+          %th
+            = postcard.send_date
+          %th
+            = postcard.received_date
+          %th
+            = postcard_status(postcard)

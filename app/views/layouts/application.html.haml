@@ -6,5 +6,18 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    .container
-      = yield
+    %section.header
+      .navbar.navbar-fixed-top
+        .navbar-inner
+          .container
+            = yield :navbar
+    %section.content
+      .container
+        .row
+          .span3
+            = yield :sidebar
+          .span9
+            - flash.each do |key, message|
+              - p Hash.new({key: key, message: message}).inspect
+            = yield
+    %section.footer

@@ -1,0 +1,41 @@
+.well.sidebar-nav
+  - if current_user
+    %p
+      Добро пожаловать,
+      %em
+        = current_user.name
+    %p
+      Ты можешь:
+      %ul
+        %li
+          %a Отправить открытку
+        %li
+          %a Зарегистрировать открытку
+        %li
+          %a
+            Посмотреть отправленные
+            = '(' + current_user.sent_cards.count.to_s + ')'
+        %li
+          %a
+            Посмотреть полученные
+            = '(' + current_user.received_cards.count.to_s + ')'
+        %li
+          =link_to 'Я устал и хочу выйти', logout_path, class: 'btn btn-danger'
+  - else
+    %p
+      Если вы уже зарегистрированы, представьтесь, пожалуйста
+    = form_tag sessions_path do
+      %fieldset
+        .control-group
+          .controls
+            .input-prepend
+              %span.add-on{style: 'margin-top: -9px; margin-right: -5px'}
+                %i.icon-user
+              %input.input-small{type: 'text', name: 'name'}
+          .controls
+            .input-prepend
+              %span.add-on{style: 'margin-top: -9px; margin-right: -5px'}
+                %i.icon-lock
+              %input.input-small{type: 'password', name: 'password'}
+        %button.btn.btn-primary{type: 'submit'}
+          Войти
