@@ -27,6 +27,7 @@ gem 'less-rails-bootstrap'
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'awesome_print'
 end
 
 group :test do
